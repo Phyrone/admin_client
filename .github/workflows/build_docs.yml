@@ -1,0 +1,16 @@
+on:
+  push:
+    paths:
+      - /docs/**
+jobs:
+  build_docs:
+    name: Build docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: redkubes/docusaurus-deploy-action@v1
+        with:
+          source-folder: docs
+          git-user: Phyrone <phyrone@phyrone.de>
+          git-password: ${{ secrets.GITHUB_TOKEN }}
+          deployment-branch: gh-pages

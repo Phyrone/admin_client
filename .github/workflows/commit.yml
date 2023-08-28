@@ -2,6 +2,9 @@ on:
   push:
     branches-ignore:
       - renovate/**
+    paths-ignore:
+      - .github/workflows/build_docs.yml
+      - docs/**
 
 name: Commit
 jobs:
@@ -9,7 +12,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-20.04, windows-latest]
+        platform:
+          - macos-latest
+          - ubuntu-20.04
+          # - windows-latest #TODO: add windows support
     runs-on: ${{ matrix.platform }}
 
     steps:

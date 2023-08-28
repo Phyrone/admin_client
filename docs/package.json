@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "clean": "rm -rf ./build ./node_modules ./yarn.lock ./.docusaurus ./.cache-loader"
+    "clean": "rm -rf ./build ./node_modules ./.docusaurus ./.cache-loader"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",

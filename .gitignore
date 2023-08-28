@@ -18,6 +18,7 @@ build
 .vscode/settings.json
 !.vscode/extensions.json
 .idea
+!.idea/modules.xml
 .DS_Store
 *.suo
 *.ntvs*

@@ -6,11 +6,19 @@ jobs:
   build_docs:
     name: Build docs
     runs-on: ubuntu-latest
+    env:
+      working-directory: docs
+
     steps:
       - uses: actions/checkout@v3
-      - uses: redkubes/docusaurus-deploy-action@v1
+      - uses: actions/setup-node@v3
         with:
-          source-folder: docs
-          git-user: Phyrone <phyrone@phyrone.de>
-          git-password: ${{ secrets.GITHUB_TOKEN }}
-          deployment-branch: gh-pages
+          node-version: 'lts/*'
+          cache: 'yarn'
+          cache-dependency-path: ${{ env.working-directory }}/yarn.lock
+      - name: Install dependencies
+        working-directory: ${{ env.working-directory }}
+        run: yarn install
+      - name: Build docs
+        working-directory: ${{ env.working-directory }}
+        run: yarn build

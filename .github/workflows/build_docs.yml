@@ -1,13 +1,13 @@
 on:
   push:
-    branches:
-      - 'main'
     paths:
       - '/docs/**'
   workflow_dispatch:
+
+name: Docs
 jobs:
   build_docs:
-    name: Build docs
+    name: Docs
     runs-on: ubuntu-latest
     env:
       working-directory: docs
@@ -25,3 +25,21 @@ jobs:
       - name: Build docs
         working-directory: ${{ env.working-directory }}
         run: yarn build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+            artifact-name: docs
+            path: ${{ env.working-directory }}/build
+      - name: Check GitHub Pages status
+        if: github.ref == 'refs/heads/main'
+        uses: crazy-max/ghaction-github-status@v3
+        with:
+          pages_threshold: major_outage
+      - name: Deploy to GitHub Pages
+        if: "success() && if: github.ref == 'refs/heads/main'"
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

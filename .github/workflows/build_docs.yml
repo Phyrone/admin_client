@@ -1,9 +1,15 @@
 on:
   push:
+    branches:
+      - main
     paths:
       - docs/**
       - .github/workflows/build_docs.yml
-  workflow_dispatch:
+
+concurrency:
+  group: 'docs'
+  cancel-in-progress: false
+
 
 name: Docs
 jobs:
@@ -32,16 +38,28 @@ jobs:
         with:
             artifact-name: docs
             path: ${{ env.working-directory }}/build
-      - name: Check GitHub Pages status
-        if: github.ref == 'refs/heads/main'
-        uses: crazy-max/ghaction-github-status@v3
-        with:
-          pages_threshold: major_outage
+#      - name: Check GitHub Pages status
+#        uses: crazy-max/ghaction-github-status@v3
+#        with:
+#          pages_threshold: major_outage
+#      - name: Deploy to GitHub Pages
+#        if: success()
+#        uses: crazy-max/ghaction-github-pages@v3
+#        with:
+#          target_branch: gh-pages
+#          build_dir: ${{ env.working-directory }}/build
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
+    needs: build_docs
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
-        if: (github.ref == 'refs/heads/main') && success()
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: ${{ env.working-directory }}/build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: deployment
+        uses: actions/deploy-pages@v2

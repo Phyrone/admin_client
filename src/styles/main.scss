@@ -1,0 +1,19 @@
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Font Awesome
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+
+// Xterm
+@import "xterm/css/xterm.css";
+
+// Custom
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-x: none;
+}

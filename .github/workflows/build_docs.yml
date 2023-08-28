@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '/docs/**'
+  workflow_dispatch:
+jobs:
+  build_docs:
+    name: Build docs
+    runs-on: ubuntu-latest
+    env:
+      working-directory: docs
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'yarn'
+          cache-dependency-path: ${{ env.working-directory }}/yarn.lock
+      - name: Install dependencies
+        working-directory: ${{ env.working-directory }}
+        run: yarn install
+      - name: Build docs
+        working-directory: ${{ env.working-directory }}
+        run: yarn build

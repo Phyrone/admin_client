@@ -14,7 +14,8 @@
     "tauri": "tauri",
     "test": "vitest",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "clean": "rm -rf ./dist ./node_modules ./src-tauri/target/ ./.svelte-kit/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",

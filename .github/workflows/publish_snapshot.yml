@@ -12,7 +12,7 @@ jobs:
         platform:
           - macos-latest
           - ubuntu-20.04
-          # - windows-latest #TODO: add windows support
+          - windows-latest
     runs-on: ${{ matrix.platform }}
 
     steps:

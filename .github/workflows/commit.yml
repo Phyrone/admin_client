@@ -3,8 +3,8 @@ on:
     branches-ignore:
       - renovate/**
     paths-ignore:
-      - .github/workflows/publish_docs.yml
-      - .github/workflows/commit_docs.yml
+      - .github/workflows/**_docs.yml
+      - .github/workflows/**_docs.yml
       - docs/**
 
 name: Commit

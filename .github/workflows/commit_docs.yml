@@ -7,10 +7,10 @@ on:
       - .github/workflows/publish_docs.yml
 
 
-name: Docs
+name: Commit Docs
 jobs:
   build_docs:
-    name: Docs
+    name: Build Docs
     runs-on: ubuntu-latest
     env:
       working-directory: docs

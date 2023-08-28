@@ -4,7 +4,7 @@ on:
       - main
     paths:
       - docs/**
-      - .github/workflows/build_docs.yml
+      - .github/workflows/publish_docs.yml
 
 concurrency:
   group: 'docs'
@@ -14,7 +14,7 @@ concurrency:
 name: Docs
 jobs:
   build_docs:
-    name: Docs
+    name: Build Docs
     runs-on: ubuntu-latest
     env:
       working-directory: docs
@@ -51,6 +51,7 @@ jobs:
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   deploy:
+    name: Deploy
     needs: build_docs
     permissions:
       pages: write

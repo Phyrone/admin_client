@@ -1,0 +1,36 @@
+on:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - docs/**
+      - .github/workflows/publish_docs.yml
+
+
+name: Docs
+jobs:
+  build_docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    env:
+      working-directory: docs
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'yarn'
+          cache-dependency-path: ${{ env.working-directory }}/yarn.lock
+      - name: Install dependencies
+        working-directory: ${{ env.working-directory }}
+        run: yarn install
+      - name: Build Docs
+        working-directory: ${{ env.working-directory }}
+        run: yarn build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+            artifact-name: docs
+            path: ${{ env.working-directory }}/build

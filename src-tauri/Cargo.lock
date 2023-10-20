@@ -1046,9 +1046,9 @@ dependencies = [
 
 [[package]]
 name = "fast_log"
-version = "1.6.7"
+version = "1.6.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9631dcb82bda0e1e137b684d76ba137311ff8123bbe712eb52a270210e37e8bf"
+checksum = "e1e44fe8091ab7bdb84d61618d8b5af60dba8a3967f57a0546a6656417a2a37c"
 dependencies = [
  "crossbeam",
  "crossbeam-channel",
@@ -1062,9 +1062,9 @@ dependencies = [
 
 [[package]]
 name = "fastdate"
-version = "0.2.2"
+version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2fd79e72b78f4c92315d95c524dbad8cea04f00be6214223e908bf783f1c85cd"
+checksum = "53a8007c89de5459e1018deb2eaa9a46881e1b0c119c9e8641ec539b78c4e123"
 dependencies = [
  "libc",
  "once_cell",

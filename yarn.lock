@@ -2151,9 +2151,9 @@ svelte@^4.0.5:
     periscopic "^3.1.0"
 
 sweetalert2@^11.7.27:
-  version "11.7.32"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.7.32.tgz#366fde9eaa1fc8d7a8993400d7582715647a31cf"
-  integrity sha512-44tNNe2oLe7T94mT6dus4hc9G7qg6jZU/K5qZzpNS6e5HGPrSF6Kie6oZ7B5puIJydB34V2h/8f5EhIFivYo4A==
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.8.0.tgz#55c1c1e1c7fb830a1d4c354e877325581997fac0"
+  integrity sha512-fXoPPZGe+V6XPbSh0gCnRlJoOFOit/SqZDzr2DY975BZCmIuFbP1duKe8yZaiNvkae9pctpfq8zfHIMzj9gvJA==
 
 tailwindcss@^3.1, tailwindcss@^3.3.3:
   version "3.3.5"

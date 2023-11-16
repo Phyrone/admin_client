@@ -32,7 +32,7 @@
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.20.4",
-    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@tauri-apps/cli": "^1.4.0",
     "@tsconfig/svelte": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",

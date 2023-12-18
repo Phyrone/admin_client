@@ -334,9 +334,9 @@
   integrity sha512-nNsm8XChhJgQdeVegdXU+EnpznSUlsIjlLJa9SNmvSVN3rcPtB2BAnGuS/EWCtgPLkVcy9V2kW5knronqmF+KQ==
 
 "@sveltejs/kit@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-2.0.2.tgz#bd02523fe570ddaf89148bffb1eb2233c458054b"
-  integrity sha512-xFpnLxVQ4KgCbj4Cj2zCFUcyfAoO87nn4nf3XcGJ7ZtOwy20tZ91vXWrtyuum8hakJWVwdNYyGXG9aBoIEYpFQ==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-2.0.3.tgz#0f4573d1bf7e196a03883d5e31800ebf235ceb13"
+  integrity sha512-TjqRBC7I3qnGeRfmxAkkwbQVnto9x+DsSDTtHC4qC+MgHPImIVzSgUiw//tZ3/uB5/MXhGNLhi5mztWZVM0sjw==
   dependencies:
     "@types/cookie" "^0.6.0"
     cookie "^0.6.0"

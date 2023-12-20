@@ -34,7 +34,7 @@ jobs:
         working-directory: ${{ env.working-directory }}
         run: yarn build
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
             artifact-name: docs
             path: ${{ env.working-directory }}/build

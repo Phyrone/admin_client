@@ -356,14 +356,15 @@
   integrity sha512-6lMvf7xYEJ+oGeR5L8DFJJrowkefTK6ZgA4JiMqoClMkKq0s6yvsd3FZfCFvX1fQ0tpCD7fkuRVHsnUVgsHyNg==
 
 "@sveltejs/kit@^2.0.0":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-2.0.6.tgz#59e5a57fb4df3aa6f681fbf44f986542a923377e"
-  integrity sha512-dnHtyjBLGXx+hrZQ9GuqLlSfTBixewJaByUVWai7LmB4dgV3FwkK155OltEgONDQW6KW64hLNS/uojdx3uC2/g==
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-2.0.8.tgz#530f57f07938727107d1d92b61adb8761a2582a4"
+  integrity sha512-44F3uE5NLwYoqDnfmX5s3cZf2SssyHpUh9vokJ3YKzf7N7nDiPZPE3sdSelLc6RT7DUr7X4HKAu72wKpw2eonw==
   dependencies:
     "@types/cookie" "^0.6.0"
     cookie "^0.6.0"
     devalue "^4.3.2"
     esm-env "^1.0.0"
+    import-meta-resolve "^4.0.0"
     kleur "^4.1.5"
     magic-string "^0.30.5"
     mrmime "^2.0.0"
